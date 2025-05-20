@@ -1,5 +1,5 @@
-# ch 7.7.2 ui.py
-from PyQt5.QtWidgets import (QApplication,QWidget,QPushButton,QVBoxLayout,QMessageBox,QPlainTextEdit,QHBoxLayout,QLineEdit,QComboBox) # QLineEdit, QComboBox 추가
+# ch 8.1.3 ui.py
+from PyQt5.QtWidgets import (QApplication,QWidget,QPushButton,QVBoxLayout,QMessageBox,QPlainTextEdit,QHBoxLayout,QLineEdit,QComboBox,QLabel) # QLabel 추가
 from PyQt5.QtGui import QIcon
 from PyQt5 import QtCore # 모듈 추가
 
@@ -25,6 +25,7 @@ class View(QWidget):
 		#self.cb.addItems(['+', '-', '*', '/', '^', '%'])
 		self.cb.addItems(['+', '-', '*', '/']) # ^ 와 % 연산자 제거
 
+		self.lbl1=QLabel('v2.3.0', self) # 버전 정보 표시를 위한 lbl1 위젯 생성
 		self.btn1=QPushButton('Calc', self)
 		self.btn2=QPushButton('Clear', self)
 
@@ -34,7 +35,7 @@ class View(QWidget):
 		hbox_formular.addWidget(self.le2)
 
 		hbox = QHBoxLayout()
-		hbox.addStretch(1)
+		hbox.addWidget(self.lbl1) # 버전 정보 표시를 위한 lbl1 위젯 생성
 		hbox.addWidget(self.btn1)
 		hbox.addWidget(self.btn2)
 
